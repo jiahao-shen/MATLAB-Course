@@ -1,0 +1,10 @@
+n = 30;
+a = linspace(-pi / 2, pi / 2, n);
+b = linspace(0, 2 * pi, n);
+[a, b] = meshgrid(a, b);
+x = cos(b) .* cos(a);
+y = sin(b) .* cos(a);
+z = sin(a);
+surf(x, y, z);
+axis equal;
+print('sphere.png', '-dpng');
