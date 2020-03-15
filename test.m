@@ -1,6 +1,0 @@
-A = randn(100, 5)
-M = mean(A)
-D = std(A)
-R = corrcoef(A)
-H = hist(A)
-% plot(H)
