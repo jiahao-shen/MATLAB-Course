@@ -6,6 +6,7 @@ function [flag, dist, prev] = BellmanFord(Graph, source)
     prev = zeros(1, n);
 
     dist(source) = 0;
+    prev(source) = source;
 
     for i = 1:n - 1
 

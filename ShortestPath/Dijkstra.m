@@ -6,6 +6,7 @@ function [dist, prev] = Dijkstra(Graph, source)
     prev = zeros(1, n);
 
     dist(source) = 0;
+    prev(source) = source;
 
     while ~isempty(Q)
         u = -1;

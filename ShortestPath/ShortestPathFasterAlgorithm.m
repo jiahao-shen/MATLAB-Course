@@ -1,11 +1,12 @@
 function [dist, prev] = ShortestPathFasterAlgorithm(Graph, source)
     n = length(Graph);
 
+    Q = [source];
     dist = Inf(1, n);
     prev = zeros(1, n);
 
     dist(source) = 0;
-    Q = [source];
+    prev(source) = source;
 
     while ~isempty(Q)
         u = -1;
