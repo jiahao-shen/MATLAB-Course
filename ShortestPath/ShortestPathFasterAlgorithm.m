@@ -1,3 +1,4 @@
+% ShortestPathFasterAlgorithm.m
 function [dist, prev] = ShortestPathFasterAlgorithm(Graph, source)
     n = length(Graph);
 

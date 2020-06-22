@@ -1,3 +1,5 @@
+% main.m
+
 % Dijkstra
 G = Inf(6);
 
