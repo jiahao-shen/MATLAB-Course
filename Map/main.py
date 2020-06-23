@@ -53,36 +53,36 @@ def lab_2():
 
 
 def lab_3():
-    # np.random.seed(int(time()))
-    # G = nx.Graph(ox.load_graphml('data/Beijing.graphml'))
-    # print(len(G.nodes))  # 61525
-    # print(len(G.edges))  # 90657
-    #
-    # iterations = 100
-    # result = np.zeros((iterations, 3))
-    #
-    # def heuristic(u, v):
-    #     x1, y1 = G.nodes[u]['x'], G.nodes[u]['y']
-    #     x2, y2 = G.nodes[v]['x'], G.nodes[v]['y']
-    #     return np.sqrt((x1 - x2) ** 2 + (y1 - y2) ** 2)
-    #
-    # for i in trange(iterations):
-    #     src = np.random.choice(G.nodes)
-    #     dst = np.random.choice(G.nodes)
-    #
-    #     t = time()
-    #     nx.dijkstra_path(G, src, dst, weight='length')
-    #     result[i][0] = time() - t
-    #
-    #     t = time()
-    #     nx.bellman_ford_path(G, src, dst, weight='length')
-    #     result[i][1] = time() - t
-    #
-    #     t = time()
-    #     nx.astar_path(G, src, dst, heuristic, weight='length')
-    #     result[i][2] = time() - t
-    #
-    # np.save('out/lab3.npy', result)
+    np.random.seed(int(time()))
+    G = nx.Graph(ox.load_graphml('data/Beijing.graphml'))
+    print(len(G.nodes))  # 61525
+    print(len(G.edges))  # 90657
+    
+    iterations = 100
+    result = np.zeros((iterations, 3))
+    
+    def heuristic(u, v):
+        x1, y1 = G.nodes[u]['x'], G.nodes[u]['y']
+        x2, y2 = G.nodes[v]['x'], G.nodes[v]['y']
+        return np.sqrt((x1 - x2) ** 2 + (y1 - y2) ** 2)
+    
+    for i in trange(iterations):
+        src = np.random.choice(G.nodes)
+        dst = np.random.choice(G.nodes)
+    
+        t = time()
+        nx.dijkstra_path(G, src, dst, weight='length')
+        result[i][0] = time() - t
+    
+        t = time()
+        nx.bellman_ford_path(G, src, dst, weight='length')
+        result[i][1] = time() - t
+    
+        t = time()
+        nx.astar_path(G, src, dst, heuristic, weight='length')
+        result[i][2] = time() - t
+    
+    np.save('out/lab3.npy', result)
 
     result = np.load('out/lab3.npy')
     x = np.arange(result.shape[0])
@@ -173,9 +173,9 @@ def lab_5():
 
 
 if __name__ == "__main__":
-    # download()
-    # lab_1()
-    # lab_2()
+    download()
+    lab_1()
+    lab_2()
     lab_3()
-    # lab_4()
-    # lab_5()
+    lab_4()
+    lab_5()
